@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play, Gamepad2, Music } from 'lucide-react';
-// 1. Array de imagens (Ajuste os nomes conforme seus arquivos em public/assets/)
+import { ChevronLeft, ChevronRight, Play, Gamepad2, Music, Skull } from 'lucide-react';
+import GameFrame from './components/GameFrame';
+import Navbar from './components/Navbar';
+
 const images = [
-  { id: 1, url: '/assets/cristina1.jpg', title: 'The Shadow' },
-  { id: 2, url: '/assets/cristina2.jpg', title: 'The Voice' },
-  { id: 3, url: '/assets/cristina3.jpg', title: 'The Queen' },
-  { id: 4, url: '/assets/cristina4.jpg', title: 'The Ritual' },
+  { id: 1, url: '/assets/cristina1.jpg', title: 'The Shadow Queen' },
+  { id: 2, url: '/assets/cristina2.jpg', title: 'Ritual of Sound' },
+  { id: 3, url: '/assets/cristina3.jpg', title: 'Gothic Harmony' },
+  { id: 4, url: '/assets/cristina4.jpg', title: 'Void Whispers' },
 ];
 
 function App() {
@@ -16,125 +18,102 @@ function App() {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="min-h-screen bg-metal-black overflow-x-hidden">
+    <div className="min-h-screen bg-[#050505] text-zinc-100 font-sans">
       
-      {/* NAVBAR */}
-      <nav className="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
-        <h1 className="text-2xl font-bold text-metal-red">C. SCABBIA</h1>
-        <div className="hidden md:flex gap-8 text-sm tracking-[0.3em] uppercase">
-          <a href="#" className="hover:text-metal-red transition">Home</a>
-          <a href="#game" className="hover:text-metal-red transition">The Game</a>
-          <a href="#" className="hover:text-metal-red transition">Gallery</a>
-        </div>
-        <div className="flex gap-4">
-  <Music size={20} className="cursor-pointer hover:text-metal-red" />
-  <span className="text-xs border border-white/20 px-2 py-1 cursor-pointer hover:border-metal-red transition">FOLLOW</span>
-</div>
-      </nav>
+      <Navbar />
 
-      {/* INTERACTIVE BANNER */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.5, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1.2 }}
-            className="absolute inset-0"
-          >
-            <img 
-              src={images[currentIndex].url} 
-              alt="Cristina Scabbia"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-metal-black via-transparent to-metal-black" />
-            <div className="absolute inset-0 bg-gradient-to-t from-metal-black via-transparent to-transparent" />
-          </motion.div>
-        </AnimatePresence>
+      <main className="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-24">
+        
+        {/* BANNER LANDSCAPE */}
+        <section className="relative">
+          <GameFrame title="NOW ENTERING THE NIGHT">
+            <div className="relative h-[400px] md:h-[550px] w-full bg-black overflow-hidden flex items-center justify-center">
+              
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.5 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0"
+                >
+                  <img 
+                    src={images[currentIndex].url} 
+                    alt={images[currentIndex].title}
+                    className="w-full h-full object-cover grayscale-[20%]"
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-        {/* Banner Content */}
-        <div className="relative z-10 text-center px-4">
-          <motion.span 
-            key={`sub-${currentIndex}`}
-            initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
-            className="text-metal-red tracking-[0.5em] text-sm md:text-lg block mb-4"
-          >
-            LACUNA COIL PRESENTS
-          </motion.span>
-          <motion.h2 
-            key={`title-${currentIndex}`}
-            initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-6xl md:text-9xl font-bold mb-8 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]"
-          >
-            {images[currentIndex].title}
-          </motion.h2>
-          <motion.button 
-             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-             className="border border-metal-red px-10 py-4 text-xs tracking-widest hover:bg-metal-red transition-all duration-500"
-          >
-            EXPLORE THE VOID
-          </motion.button>
-        </div>
+              <div className="relative z-10 text-center pointer-events-none px-6">
+                <motion.h2 
+                  key={`title-${currentIndex}`}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  className="text-4xl md:text-7xl font-serif font-bold text-white tracking-tight drop-shadow-2xl"
+                >
+                  {images[currentIndex].title}
+                </motion.h2>
+                <div className="w-16 h-[2px] bg-red-900 mx-auto mt-4"></div>
+              </div>
 
-        {/* Controls */}
-        <button onClick={prevSlide} className="absolute left-8 z-30 p-4 border border-white/10 hover:border-metal-red rounded-full transition-all">
-          <ChevronLeft size={30} />
-        </button>
-        <button onClick={nextSlide} className="absolute right-8 z-30 p-4 border border-white/10 hover:border-metal-red rounded-full transition-all">
-          <ChevronRight size={30} />
-        </button>
+              {/* Botões de Navegação */}
+              <button onClick={prevSlide} className="absolute left-4 z-30 p-2 bg-black/40 border border-white/5 hover:border-red-900 transition-all rounded-full">
+                <ChevronLeft size={24} />
+              </button>
+              <button onClick={nextSlide} className="absolute right-4 z-30 p-2 bg-black/40 border border-white/5 hover:border-red-900 transition-all rounded-full">
+                <ChevronRight size={24} />
+              </button>
 
-        {/* Thumbnails Navigation */}
-        <div className="absolute bottom-12 flex gap-4 z-30">
-          {images.map((img, idx) => (
-            <div 
-              key={img.id}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-20 h-28 cursor-pointer transition-all duration-500 border-2 overflow-hidden ${currentIndex === idx ? 'border-metal-red scale-110' : 'border-white/20 opacity-40 hover:opacity-100'}`}
-            >
-              <img src={img.url} className="w-full h-full object-cover" />
+              {/* Miniaturas */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+                {images.map((img, idx) => (
+                  <button 
+                    key={img.id}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-10 h-14 border transition-all ${
+                      currentIndex === idx ? 'border-red-800 scale-110' : 'border-zinc-800 opacity-40 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={img.url} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </GameFrame>
+        </section>
 
-      {/* GAME SECTION */}
-      <section id="game" className="py-32 px-6 bg-smoke">
-        <div className="max-w-6xl mx-auto border border-zinc-800 bg-black/40 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-          
-          <div className="flex-1 p-12 flex flex-col justify-center">
-            <div className="flex items-center gap-3 text-metal-red mb-6">
-              <Gamepad2 size={24} />
-              <span className="tracking-[.3em] text-sm">LEVEL START</span>
-            </div>
-            <h3 className="text-5xl font-bold mb-6">THE METAL QUEST</h3>
-            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-              Mergulhe em um desafio rítmico onde a voz de Cristina é sua única guia. 
-              Sincronize seus ataques, vença as sombras e suba ao trono do Heavy Metal.
-            </p>
-            <button className="w-fit flex items-center gap-4 bg-metal-red hover:bg-red-600 text-white px-12 py-5 rounded-sm font-bold uppercase tracking-widest transition-all">
-              <Play fill="currentColor" /> Play Now
-            </button>
+        {/* SEÇÃO DO JOGO (Também simplificada) */}
+        <section id="game" className="space-y-8">
+          <div className="text-center">
+            <h3 className="text-3xl font-serif tracking-[0.4em] text-zinc-100 uppercase">The Quest</h3>
           </div>
 
-          <div className="flex-1 bg-zinc-900 min-h-[400px] relative group flex items-center justify-center border-l border-zinc-800">
-            {/* Aqui é onde o jogo será injetado */}
-            <div className="text-center">
-              <div className="w-20 h-20 border-4 border-metal-red border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-zinc-500 font-serif italic">Carregando o abismo...</p>
+          <GameFrame title="GAME MODULE">
+            <div className="grid lg:grid-cols-3 min-h-[400px]">
+              <div className="p-10 bg-[#080808] flex flex-col justify-center gap-6 border-r border-zinc-900">
+                <div className="flex items-center gap-3 text-red-800">
+                  <Gamepad2 size={18} />
+                  <span className="text-[10px] tracking-widest font-bold uppercase tracking-tighter">System Ready</span>
+                </div>
+                <h4 className="text-2xl font-serif uppercase">Metal Symphony</h4>
+                <button className="bg-red-900 hover:bg-red-800 text-white py-4 font-serif text-[10px] tracking-[0.4em] transition-all">
+                  START MISSION
+                </button>
+              </div>
+              <div className="lg:col-span-2 bg-zinc-950 flex items-center justify-center italic text-zinc-700 text-xs tracking-widest uppercase">
+                Awaiting Engine...
+              </div>
             </div>
-            {/* Overlay estético */}
-            <div className="absolute inset-0 bg-red-900/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-          </div>
+          </GameFrame>
+        </section>
 
-        </div>
-      </section>
+      </main>
 
-      <footer className="py-20 text-center border-t border-zinc-900">
-        <p className="text-zinc-600 text-sm tracking-widest uppercase">
-          &copy; 2026 Cristina Scabbia Site Project // Made with Metal
+      <footer className="py-12 border-t border-zinc-900 text-center opacity-40">
+        <p className="text-[9px] tracking-[0.5em] uppercase font-serif">
+          Cristina Scabbia // 2026
         </p>
       </footer>
     </div>

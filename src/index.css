@@ -1,9 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  background-color: #0a0a0a;
-  color: white;
-  margin: 0;
+/* Configurações Globais de Estilo Metal */
+@layer base {
+  :root {
+    --color-metal-black: #0a0a0a;
+    --color-metal-red: #7f1d1d;
+  }
+
+  body {
+    @apply bg-[#0a0a0a] text-zinc-100 antialiased;
+    /* Fonte padrão para textos longos */
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+  }
+
+  /* Aplica a Cinzel (serif) automaticamente em todos os títulos */
+  h1, h2, h3, h4, .font-metal {
+    @apply font-serif uppercase tracking-[0.2em];
+  }
+
+  /* Scrollbar customizada para não quebrar o clima dark */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7f1d1d;
+  }
+}
+
+/* Efeito de Gradiente de "Fumaça" para o fundo das seções */
+.bg-smoke {
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+/* Efeito de vinheta para as imagens do banner */
+.vignette {
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
 }

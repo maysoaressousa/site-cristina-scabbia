@@ -20,7 +20,7 @@ function App() {
         style={{ 
           backgroundImage: "url('/assets/background-geral.png')", 
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center bottom',
           backgroundAttachment: 'fixed', // Ajuda no desempenho de imagens grandes
           filter: "brightness(0.3) contrast(1.1)" 
         }}

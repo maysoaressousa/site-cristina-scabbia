@@ -12,12 +12,12 @@ const Banner = ({ images }) => {
 
   // Tratamento de erro caso não haja imagens
   if (!images || images.length === 0) {
-    return <div className="h-[400px] flex items-center justify-center text-zinc-600 bg-black border border-zinc-900">No images provided for banner.</div>;
+    return <div className="h-[600px] flex items-center justify-center text-zinc-600 bg-black border border-zinc-900">No images provided for banner.</div>;
   }
 
   return (
     // Container do Banner com proporção Landscape (horizontal) restaurada
-    <div className="relative h-[400px] md:h-[550px] w-full bg-black overflow-hidden flex items-center justify-center">
+    <div className="relative h-[600px] md:h-[700px] w-full bg-black overflow-hidden flex items-center justify-center">
       
       {/* CAMADA 1: Imagens com Animação (AnimatePresence) */}
       <AnimatePresence mode="wait">

@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* LINKS DE NAVEGAÇÃO (DESKTOP) */}
       <div className="hidden md:flex gap-10 text-[10px] tracking-[0.5em] uppercase">
         <a href="#" className="hover:text-red-700 transition-colors duration-300 relative group">
-          Chronicles
+          Home
           <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-red-700 group-hover:w-full transition-all duration-500"></span>
         </a>
         

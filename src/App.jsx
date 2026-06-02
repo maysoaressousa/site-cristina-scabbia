@@ -9,7 +9,7 @@ import CharactersSection from './components/CharactersSection';
 const images = [
   { id: 1, url: '/assets/banner-Cristina Scabbia.png' },
   { id: 2, url: '/assets/frame-runas.png', title: 'Play or Die' },
-  { id: 3, url: '/assets/frame-runas.png', title: 'Snaileans' },
+  { id: 3, url: '/assets/frame-runas.png', title: 'Snailiens' },
 ];
 
 function App() {

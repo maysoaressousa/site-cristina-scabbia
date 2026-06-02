@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 /* Configurações Globais de Estilo Metal */
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --color-metal-black: #0a0a0a;

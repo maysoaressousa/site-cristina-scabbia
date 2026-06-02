@@ -8,7 +8,7 @@ const GameSection = () => {
       {/* Título da Seção */}
       <div className="text-center">
         <h3 className="text-3xl font-serif tracking-[0.4em] text-zinc-100 uppercase">
-          The Quest
+          The Game
         </h3>
         <p className="text-[10px] tracking-[0.3em] text-red-700 font-bold uppercase mt-3">
           Shadow Queen's Ascension

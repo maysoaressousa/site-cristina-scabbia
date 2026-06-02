@@ -3,11 +3,13 @@ import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import GameSection from './components/GameSection';
 import GameFrame from './components/GameFrame';
+import CharactersSection from './components/CharactersSection';
 
+// Suas imagens configuradas com os caminhos corretos
 const images = [
-  { id: 1, url: '/assets/banner-Cristina Scabbia.png'},
-  { id: 2, url: '/assets/frame-runas.png', title: 'Eternal Echoes' },
-  { id: 3, url: '/assets/frame-runas.png', title: 'Void Ritual' },
+  { id: 1, url: '/assets/banner-Cristina Scabbia.png' },
+  { id: 2, url: '/assets/frame-runas.png', title: 'Play or Die' },
+  { id: 3, url: '/assets/frame-runas.png', title: 'Snaileans' },
 ];
 
 function App() {
@@ -38,8 +40,14 @@ function App() {
           </GameFrame>
         </section>
 
+        {/* Seção do Jogo */}
         <div className="max-w-7xl mx-auto px-4">
           <GameSection />
+        </div>
+
+        {/* NOVA ATUALIZAÇÃO: Seção dos personagens alinhados de 4 em 4 */}
+        <div className="max-w-7xl mx-auto px-4">
+          <CharactersSection />
         </div>
       </main>
 

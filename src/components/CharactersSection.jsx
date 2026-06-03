@@ -85,9 +85,9 @@ const characters = [
   },
   {
     id: 12,
-    name: 'Void Weaver',
-    role: 'Necromancer',
-    description: 'Comanda as almas caídas e tece a escuridão do abismo para moldar o campo de batalha.',
+    name: 'Corinne',
+    role: 'Ruler of Slippers @corinne.486',
+    description: 'Carrier of the iconic Italian throwing weapon',
     imageUrl: '/assets/12.png'
   },
 ];

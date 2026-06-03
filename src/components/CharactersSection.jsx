@@ -6,62 +6,90 @@ const characters = [
   // --- PRIMEIRA FILEIRA ---
   {
     id: 1,
-    name: 'The Shadow Queen',
-    role: 'Cristina Scabbia',
-    description: 'A soberana do abismo que canaliza o poder do Metal Cósmico através de sua voz rúnica.',
-    imageUrl: '/assets/participante.png'
+    name: 'Mila',
+    role: 'The Alchimist',
+    description: 'Creator and mastermind of the game.',
+    imageUrl: '/assets/1.png'
   },
   {
     id: 2,
-    name: 'Void Seeker',
-    role: 'Mage',
-    description: 'Manipulador das energias escuras e guardião dos sussurros perdidos no vazio.',
-    imageUrl: '/assets/participante.png'
+    name: 'Mayara Piercer',
+    role: 'May the Dreadful',
+    description: 'Creator and mastermind behind the website. Creator of the Instagram account @ACERVOCRISTINASCABBIA.',
+    imageUrl: '/assets/2.png'
   },
   {
     id: 3,
-    name: 'Iron Vanguard',
-    role: 'Warrior',
-    description: 'Forjado nas chamas do heavy metal, protege o reino com sua armadura de puro aço.',
-    imageUrl: '/assets/participante.png'
+    name: 'Caron Dittel (Carontte)',
+    role: 'Carrier of Souls',
+    description: 'Navigator of twilight currents, she steers lost dreams through the veil of death.',
+    imageUrl: '/assets/3.png'
   },
   {
     id: 4,
-    name: 'Ritualist',
+    name: 'Flavia',
     role: 'Cleric',
-    description: 'Sacerdote que evoca as melodias ancestrais para curar aliados e amaldiçoar os opositores.',
-    imageUrl: '/assets/participante.png'
+    description: '@flavia__lc',
+    imageUrl: '/assets/4.png'
   },
   
   // --- SEGUNDA FILEIRA (Nova) ---
   {
     id: 5,
-    name: 'Nightstalker',
+    name: 'Masha Wolff',
     role: 'Rogue',
-    description: 'Mestre da furtividade que se move entre as sombras das runas, desferindo golpes fatais.',
-    imageUrl: '/assets/char5.jpg'
+    description: '@mashalc',
+    imageUrl: '/assets/5.png'
   },
   {
     id: 6,
-    name: 'Abyssal Siren',
+    name: 'Myke Dyer',
     role: 'Bard',
-    description: 'Sua melodia hipnótica distorce a realidade e despedaça a mente dos inimigos despreparados.',
-    imageUrl: '/assets/char6.jpg'
+    description: '@mikey_dyer',
+    imageUrl: '/assets/6.png'
   },
   {
     id: 7,
-    name: 'Runebound Berserker',
+    name: 'Bruna Biagi',
     role: 'Barbarian',
-    description: 'Consumido pela fúria do metal rúnico, ele quebra as linhas de defesa com força bruta.',
-    imageUrl: '/assets/char7.jpg'
+    description: '@bru.biagi',
+    imageUrl: '/assets/7.png'
   },
   {
     id: 8,
+    name: 'Josh White',
+    role: 'Josh The Green Monster',
+    description: '@superjosh4424',
+    imageUrl: '/assets/8.png'
+  },
+  {
+    id: 9,
+    name: 'HK',
+    role: 'HK, Wielder of The Stylus Pen Artist',
+    description: 'A traveling cartoon, HK utilizes the power of her pen to draw her way to victory.',
+    imageUrl: '/assets/9.png'
+  },
+  {
+    id: 10,
+    name: 'Raffaella Fusi',
+    role: 'Necromancer',
+    description: '@raffy.roc',
+    imageUrl: '/assets/10.png'
+  },
+  {
+    id: 11,
+    name: 'Opeth Gurl',
+    role: 'Phoenix the Conjurer',
+    description: 'The conjurer of hope and demise and all that falls in between, painting wishes into realities. @opethgurling.',
+    imageUrl: '/assets/11.png'
+  },
+  {
+    id: 12,
     name: 'Void Weaver',
     role: 'Necromancer',
     description: 'Comanda as almas caídas e tece a escuridão do abismo para moldar o campo de batalha.',
-    imageUrl: '/assets/char8.jpg'
-  }
+    imageUrl: '/assets/12.png'
+  },
 ];
 
 const CharactersSection = () => {

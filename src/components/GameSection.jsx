@@ -23,7 +23,7 @@ const GameSection = () => {
           
           {/* Tela Centralizada do Scratch - TAMANHO EXPANDIDO PARA 750px */}
           <div className="relative z-10 w-full max-w-[750px] aspect-[485/402] bg-black shadow-[0_0_60px_rgba(0,0,0,0.95)] border border-zinc-900">
-            <iframe className="w-full h-full" src="https://scratch.mit.edu/projects/1328056028/embed" allowtransparency="true" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+            <iframe className="w-full h-full" src="https://scratch.mit.edu/projects/1323881923/embed" allowtransparency="true" frameBorder="0" scrolling="no" allowFullScreen></iframe>
           </div>
 
         </div>

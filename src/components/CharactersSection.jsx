@@ -90,6 +90,13 @@ const characters = [
     description: 'Carrier of the iconic Italian throwing weapon',
     imageUrl: '/assets/12.png'
   },
+  {
+    id: 13,
+    name: 'The Bogan',
+    role: '@Dave_The_Bogan',
+    description: 'Creator of foot-shredding Lego traps. I bleed Danish plastic! @Dave_The_Bogan',
+    imageUrl: '/assets/13.png'
+  },
 ];
 
 const CharactersSection = () => {
